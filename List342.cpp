@@ -42,7 +42,7 @@ bool List342<T>::Insert(T* obj)
     T result;
     if(Peek(current_obj, result)) return false;
     //Empty list
-    Node<T>* insert_node = new Node<T>(); // must add the value itself not reference
+    Node<T>* insert_node = new Node<T>();
     insert_node->data = new T(current_obj);
     if(head_ == nullptr)
     {
@@ -135,7 +135,7 @@ int List342<T>::Size() const
 template<class T>
 void List342<T>::DeleteList()
 {
-    while(head_ != nullptr) // needs to also delete objects in the list
+    while(head_ != nullptr)
     {
         Node<T>* current_node = head_;
         head_ = head_->next;
@@ -195,7 +195,7 @@ bool List342<T>::Merge(List342& list1)
 }
 //Operator Overloads
 template<class T>
-List342<T> List342<T>::operator+(List342& rhs) const //make more efficient i guess
+List342<T> List342<T>::operator+(List342& rhs) const 
 {
     List342<T> new_list = *this;
     new_list += rhs;
